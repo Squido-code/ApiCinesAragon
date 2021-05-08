@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface SesionesRepo extends CrudRepository<Sesiones, Integer> {
-    @Query(value = "SELECT * FROM sesiones s LEFT JOIN horarios h on s.horarios=h.id WHERE s.peliculas = :param", nativeQuery = true)
-    List<Sesiones> findByPeliculas(@Param("param") int param);
+    @Query(value = "SELECT hora FROM horarios h LEFT JOIN peliculas_horarios p on h.id=p.horarios_id WHERE p.peliculas_id = :param", nativeQuery = true)
+    List<String> findByPeliculas(@Param("param") int param);
 }

@@ -1,6 +1,5 @@
 package com.cinesaragon.api.ApiCinesAragon.controller;
 
-import com.cinesaragon.api.ApiCinesAragon.domain.Sesiones;
 import com.cinesaragon.api.ApiCinesAragon.service.SesionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,8 +16,8 @@ public class SesionesController {
     private SesionesService sesionesService;
 
     @GetMapping("sesiones/{id}")
-    public ResponseEntity<List<Sesiones>> getSesiones(@PathVariable int id) {
-        List<Sesiones> sesiones = sesionesService.findByPeliculas(id);
+    public ResponseEntity<List<String>> getSesiones(@PathVariable int id) {
+        List<String> sesiones = sesionesService.findByPeliculas(id);
         return new ResponseEntity<>(sesiones, HttpStatus.OK);
     }
 }
