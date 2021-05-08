@@ -14,10 +14,10 @@ import java.util.List;
 public class Horarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_horarios;
+    private int id;
     @Column
     private String hora;
     @OneToMany
-    @JoinColumn(name = "id_horarios")
+    @JoinColumn(name = "horarios")
     private List<Sesiones> sesiones;
 }

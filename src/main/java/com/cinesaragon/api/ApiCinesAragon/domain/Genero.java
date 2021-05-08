@@ -12,10 +12,10 @@ import java.util.List;
 public class Genero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_genero;
+    private int id;
     @Column
     private String nombre;
     @OneToMany
-    @JoinColumn(name = "id_genero")
+    @JoinColumn(name = "genero")
     private List<Peliculas> peliculas;
 }

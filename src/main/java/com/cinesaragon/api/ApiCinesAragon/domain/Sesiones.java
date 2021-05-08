@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Data
 @AllArgsConstructor
@@ -14,9 +14,9 @@ import java.util.List;
 public class Sesiones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_sesiones;
+    private int id;
     @Column
-    private int id_peliculas;
+    private int peliculas;
     @Column
-    private int id_horarios;
+    private int horarios;
 }

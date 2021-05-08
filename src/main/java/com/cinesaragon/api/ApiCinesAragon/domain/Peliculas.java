@@ -14,10 +14,13 @@ import java.util.List;
 public class Peliculas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_pelicula;
+    private int id;
 
     @Column
     private String titulo;
+
+    @Column
+    private String sinopsis;
 
     @Column
     private String fecha_estreno;
@@ -35,9 +38,9 @@ public class Peliculas {
     private int votos;
 
     @Column
-    private int id_genero;
+    private int genero;
 
     @OneToMany
-    @JoinColumn(name = "id_peliculas")
+    @JoinColumn(name = "peliculas")
     private List<Sesiones> sesiones;
 }
