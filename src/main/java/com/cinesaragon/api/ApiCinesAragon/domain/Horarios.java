@@ -17,7 +17,6 @@ public class Horarios {
     private int id;
     @Column
     private String hora;
-    @OneToMany
-    @JoinColumn(name = "horarios")
-    private List<Sesiones> sesiones;
+    @ManyToMany
+    private List<Peliculas> peliculas;
 }

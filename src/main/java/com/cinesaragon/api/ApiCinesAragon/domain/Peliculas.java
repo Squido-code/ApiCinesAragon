@@ -40,7 +40,6 @@ public class Peliculas {
     @Column
     private int genero;
 
-    @OneToMany
-    @JoinColumn(name = "peliculas")
-    private List<Sesiones> sesiones;
+    @ManyToMany
+    private List<Horarios> horarios;
 }

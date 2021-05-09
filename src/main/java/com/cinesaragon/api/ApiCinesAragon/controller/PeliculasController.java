@@ -47,4 +47,10 @@ public class PeliculasController {
         List<Peliculas> peliculas = peliculaService.votoOrden();
         return new ResponseEntity<>(peliculas, HttpStatus.OK);
     }
+
+    @GetMapping("sesiones/{id}")
+    public ResponseEntity<List<String>> getSesiones(@PathVariable int id) {
+        List<String> sesiones = peliculaService.findSesiones(id);
+        return new ResponseEntity<>(sesiones, HttpStatus.OK);
+    }
 }

@@ -39,8 +39,13 @@ public class PeliculaServiceImpl implements PeliculaService {
     public List<Peliculas> votoOrden() {
         return peliculaRepo.findAll()
                 .stream()
-                .sorted(Comparator.comparingInt(Peliculas::getVotos))
+                .sorted(Comparator.comparingInt(Peliculas::getVotos).reversed())
                 .collect(Collectors.toList());
 
+    }
+
+    @Override
+    public List<String> findSesiones(int idPelicula) {
+        return peliculaRepo.findSesiones(idPelicula);
     }
 }

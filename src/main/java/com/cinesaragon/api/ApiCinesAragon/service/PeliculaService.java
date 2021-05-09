@@ -14,4 +14,7 @@ public interface PeliculaService {
     Peliculas busquedaTitulo(String param);
 
     List<Peliculas> votoOrden();
+
+    List<String> findSesiones(int idPelicula);
+
 }
