@@ -1,5 +1,6 @@
 package com.cinesaragon.api.ApiCinesAragon.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,6 @@ public class Horarios {
     @Column
     private String hora;
     @ManyToMany
+    @JsonBackReference
     private List<Peliculas> peliculas;
 }
